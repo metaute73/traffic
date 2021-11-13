@@ -3,13 +3,13 @@ public class Vehiculo {
 	
 	Via via_Origen;
 	Via via_Destino;
-	char tipo;
+	String tipo;
 	int registro;
 
 	Vehiculo(){
 		
 	}
-	Vehiculo(Via Origen, char tipo, int registro){
+	Vehiculo(Via Origen, String tipo, int registro){
 		
 		this.via_Origen = Origen;
 		this.tipo = tipo;
@@ -17,13 +17,17 @@ public class Vehiculo {
 
 		
 	}
-	Vehiculo(Via Origen, Via Destino, char tipo, int registro){
+	Vehiculo(Via Origen, Via Destino, String tipo, int registro){
 		this(Origen, tipo, registro);
 		this.via_Destino = Destino;
 		String r = String.valueOf(tipo) + String.valueOf(Origen.numero) + 
 				String.valueOf(Destino.numero);
 		Main.registros.add(r);
 
+	}
+	
+	public int getRegistro() {
+		return this.registro;
 	}
 	
 }
