@@ -5,7 +5,7 @@ public class Vehiculo {
 	Via via_Destino;
 	char tipo;
 	int registro;
-	
+
 	Vehiculo(){
 		
 	}
@@ -14,11 +14,15 @@ public class Vehiculo {
 		this.via_Origen = Origen;
 		this.tipo = tipo;
 		this.registro = registro;
+
 		
 	}
 	Vehiculo(Via Origen, Via Destino, char tipo, int registro){
 		this(Origen, tipo, registro);
 		this.via_Destino = Destino;
+		String r = String.valueOf(tipo) + String.valueOf(Origen.numero) + 
+				String.valueOf(Destino.numero);
+		Main.registros.add(r);
 
 	}
 	
