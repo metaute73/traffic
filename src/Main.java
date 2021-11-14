@@ -27,12 +27,14 @@ public class Main {
 			case 1:
 				continue;
 			case 2:
-				System.out.println("tipo: ");
+				
+				System.out.print("tipo: ");
 				String tipo = input.next();
-				System.out.println("via origen: ");
+				System.out.print("via origen: ");
 				int via_origen = input.nextInt();
-				System.out.println("via destino: ");
+				System.out.print("via destino: ");
 				int via_destino = input.nextInt();
+				
 				try {
 					checkVehiculoVia( via_origen, via_destino);
 				}catch(ViaErronea e) {
@@ -86,7 +88,8 @@ public class Main {
 	}
 
 	static void checkVehiculoTipo(String tipo) throws VehiculoNoPermitido{
-		if (!tipo.equals("C") || !tipo.equals("M") || !tipo.equals("A"))
-			throw new VehiculoNoPermitido();
+		if (!tipo.equals("C") && !tipo.equals("M") && !tipo.equals("A"))
+			
+				throw new VehiculoNoPermitido();
 	}
 }
