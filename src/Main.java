@@ -1,4 +1,8 @@
 import java.util.Vector;
+
+import errors.VehiculoNoPermitido;
+import errors.ViaErronea;
+
 import java.util.Scanner;
 public class Main {
 	
@@ -29,6 +33,18 @@ public class Main {
 				int via_origen = input.nextInt();
 				System.out.println("via destino: ");
 				int via_destino = input.nextInt();
+				try {
+					checkVehiculoVia( via_origen, via_destino);
+				}catch(ViaErronea e) {
+					System.out.println(e.getMessage());
+					continue;
+				}
+				try {
+					checkVehiculoTipo(tipo);
+				}catch(VehiculoNoPermitido h) {
+					System.out.println(h.getMessage());
+					continue;
+				}
 				Vehiculo vehiculo = new Vehiculo(numero_via(via_origen), numero_via(via_destino),tipo, 
 						numero_registro());
 								continue;
@@ -56,5 +72,21 @@ public class Main {
 		else
 			return via3;
 	}
+	
+	static void checkVehiculoVia(int via_origen, int via_destino) throws ViaErronea{
+		if (via_origen == 2) {
+			if (via_destino != 2)
+				throw new ViaErronea();
+		}
+		else if (via_origen == 3) {
+			if (via_destino == 2)
+				throw new ViaErronea();
+		}
+		
+	}
 
+	static void checkVehiculoTipo(String tipo) throws VehiculoNoPermitido{
+		if (!tipo.equals("C") || !tipo.equals("M") || !tipo.equals("A"))
+			throw new VehiculoNoPermitido();
+	}
 }
