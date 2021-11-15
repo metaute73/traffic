@@ -17,6 +17,9 @@ public class Main {
 		 new Vehiculo(via1,via2,"C",numero_registro());
 		 new Vehiculo(via3, via1, "M", numero_registro());
 		
+		 System.out.println(Vehiculo.getTotalGiros());
+		 System.out.println(Vehiculo.getTotalGirosPorVehiculo());
+		 
 		Scanner input = new Scanner(System.in);
 		while (true) {
 			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
