@@ -2,7 +2,7 @@ import java.util.Vector;
 
 import errors.VehiculoNoPermitido;
 import errors.ViaErronea;
-
+import errors.Errorindice;
 import java.util.Scanner;
 public class Main {
 	
@@ -16,7 +16,9 @@ public class Main {
 
 		 new Vehiculo(via1,via2,"C",numero_registro());
 		 new Vehiculo(via3, via1, "M", numero_registro());
-		
+		 new Vehiculo(via2, via2, "A", numero_registro());
+		 new Vehiculo(via3, via3, "M", numero_registro());
+		 new Vehiculo(via1, via3, "M", numero_registro());
 		Scanner input = new Scanner(System.in);
 		while (true) {
 			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
@@ -52,9 +54,35 @@ public class Main {
 						numero_registro());
 								continue;
 			case 3:
-				
+				System.out.println("escribe numero de registro:");
+				int identificador=input.nextInt();
+				try{checkindice(identificador);
+
+				}
+				catch (Errorindice k){
+					System.out.println(k.getMessage());
+					continue;
+				}
+				System.out.println(registros.get(identificador).toString());
 				continue;
 			case 4:
+				System.out.println("escribe numero de registro:");
+				int borrado=input.nextInt();
+				try{checkindice(borrado);
+
+				}
+				catch (Errorindice p){
+					System.out.println(p.getMessage());
+					continue;
+				}
+				int registroborrado=registros.get(borrado).registro;
+				registros.remove(borrado);
+				for(int i=registroborrado; i<registros.size(); i++){
+					registros.get(i).registro--;
+
+			}
+
+
 				continue;
 			case 5:
 				break;
@@ -66,6 +94,7 @@ public class Main {
 		for (Vehiculo v : registros) {
 			System.out.println(v.toString());
 		}
+		System.out.println(registros.get(2).registro);
 	}
 	public static int numero_registro() {
 		return registros.size();
@@ -95,5 +124,10 @@ public class Main {
 		if (!tipo.equals("C") && !tipo.equals("M") && !tipo.equals("A"))
 			
 				throw new VehiculoNoPermitido();
+	}
+	static void checkindice(int borrar) throws Errorindice{
+		if (borrar>=registros.size()){
+			throw new Errorindice();
+		}
 	}
 }
