@@ -18,7 +18,7 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		while (true) {
-			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
+			System.out.println("Bienvenido \n ï¿½Que desea realizar hoy?");
 			System.out.println("1. Motrar registros\n2. Agregar vehiculo \n3. Buscar vehiculo \n4. Borrar vehiculo"
 					+ "\n5 Salir ");
 			
@@ -50,7 +50,8 @@ public class Main {
 				Vehiculo vehiculo = new Vehiculo(numero_via(via_origen), numero_via(via_destino),tipo, 
 						numero_registro());
 								continue;
-			case 3:
+			case 3:System.out.println("jkjkj");
+
 				
 				continue;
 			case 4:
