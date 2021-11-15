@@ -16,12 +16,9 @@ public class Main {
 
 		 new Vehiculo(via1,via2,"C",numero_registro());
 		 new Vehiculo(via3, via1, "M", numero_registro());
-		 new Vehiculo(via2, via2, "A", numero_registro());
-		 new Vehiculo(via3, via3, "M", numero_registro());
-		 new Vehiculo(via1, via3, "M", numero_registro());
 		Scanner input = new Scanner(System.in);
 		while (true) {
-			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
+			System.out.println("Bienvenido \n Â¿Que desea realizar hoy?");
 			System.out.println("1. Motrar registros\n2. Agregar vehiculo \n3. Buscar vehiculo \n4. Borrar vehiculo"
 					+ "\n5 Salir ");
 			
