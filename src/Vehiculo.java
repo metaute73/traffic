@@ -53,8 +53,8 @@ public class Vehiculo {
 			}
 
 		}
-		String vehiculosPorTipo = "Número de camiones: " + contadorC + "\nNúmero de automoviles: " + contadorA
-				+ "\nNúmero de motocicletas: " + contadorM;
+		String vehiculosPorTipo = "NÃºmero de camiones: " + contadorC + "\nNÃºmero de automoviles: " + contadorA
+				+ "\nNÃºmero de motocicletas: " + contadorM;
 		return vehiculosPorTipo;
 	}
 
@@ -100,11 +100,12 @@ public class Vehiculo {
 		int girosA = girosPorTipo("A");
 		int girosC = girosPorTipo("C");
 		int girosM = girosPorTipo("M");
-		String totalGirosPorTipo = "Giros por camión: "+girosC+
+		String totalGirosPorTipo = "Giros por camiÃ³n: "+girosC+
 				"\nGiros por automovil: "+girosA+
 				"\nGiros por motocicleta: "+girosM;
 		return totalGirosPorTipo;
 	}
+
 
 
 	public static int getTotalRegistros() {
