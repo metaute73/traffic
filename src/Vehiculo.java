@@ -20,10 +20,14 @@ public class Vehiculo {
 	Vehiculo(Via Origen, Via Destino, String tipo, int registro){
 		this(Origen, tipo, registro);
 		this.via_Destino = Destino;
-		String r = String.valueOf(tipo) + String.valueOf(Origen.numero) + 
-				String.valueOf(Destino.numero);
-		Main.registros.add(r);
+		
+		Main.registros.add(this);
 
+	}
+	public String toString() {
+		String r = String.valueOf(this.tipo) + String.valueOf(this.via_Origen.numero) + 
+				String.valueOf(this.via_Destino.numero);
+		return r;
 	}
 	
 	public int getRegistro() {

@@ -6,7 +6,8 @@ import errors.ViaErronea;
 import java.util.Scanner;
 public class Main {
 	
-	public static Vector<String>registros = new Vector<>();
+	public static Vector<Vehiculo> registros = new Vector<>();
+	
 	static Via via1 = new Via(1);
 	static Via via2 = new Via(2);
 	static Via via3 = new Via(3);
@@ -18,7 +19,7 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		while (true) {
-			System.out.println("Bienvenido \n ï¿½Que desea realizar hoy?");
+			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
 			System.out.println("1. Motrar registros\n2. Agregar vehiculo \n3. Buscar vehiculo \n4. Borrar vehiculo"
 					+ "\n5 Salir ");
 			
@@ -50,8 +51,7 @@ public class Main {
 				Vehiculo vehiculo = new Vehiculo(numero_via(via_origen), numero_via(via_destino),tipo, 
 						numero_registro());
 								continue;
-			case 3:System.out.println("jkjkj");
-
+			case 3:
 				
 				continue;
 			case 4:
@@ -62,7 +62,10 @@ public class Main {
 			break;
 			
 		}
-		System.out.println(registros);
+		input.close();
+		for (Vehiculo v : registros) {
+			System.out.println(v.toString());
+		}
 	}
 	public static int numero_registro() {
 		return registros.size();
