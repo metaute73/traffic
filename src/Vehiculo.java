@@ -106,7 +106,9 @@ public class Vehiculo {
 		return totalGirosPorTipo;
 	}
 
-	public int getTotalRegistros() {
+
+
+	public static int getTotalRegistros() {
 		return Main.registros.size();
 	}
 
