@@ -53,8 +53,8 @@ public class Vehiculo {
 			}
 
 		}
-		String vehiculosPorTipo = "Número de camiones: " + contadorC + "\nNúmero de automoviles: " + contadorA
-				+ "\nNúmero de motocicletas: " + contadorM;
+		String vehiculosPorTipo = "NÃºmero de camiones: " + contadorC + "\nNÃºmero de automoviles: " + contadorA
+				+ "\nNÃºmero de motocicletas: " + contadorM;
 		return vehiculosPorTipo;
 	}
 
@@ -100,59 +100,11 @@ public class Vehiculo {
 		int girosA = girosPorTipo("A");
 		int girosC = girosPorTipo("C");
 		int girosM = girosPorTipo("M");
-		String totalGirosPorTipo = "Giros por camión: "+girosC+
+		String totalGirosPorTipo = "Giros por camiÃ³n: "+girosC+
 				"\nGiros por automovil: "+girosA+
 				"\nGiros por motocicleta: "+girosM;
 		return totalGirosPorTipo;
 	}
-
-	/*public static int getTotalGirosPorVehiculo() {
-		String girosVehiculosPorTipo = "";
-		int contadorC = 0;
-		int contadorA = 0;
-		int contadorM = 0;
-		for (Vehiculo elemento : Main.registros) {
-			if (elemento.tipo.equals("A")) {
-				if (elemento.via_Origen.numero == 1) {
-					if (elemento.via_Destino.numero == 2) {
-						contadorA++;
-					} else if (elemento.via_Destino.numero == 3) {
-						contadorA++;
-					}
-				} else if (elemento.via_Origen.numero == 3) {
-					if (elemento.via_Destino.numero == 1) {
-						contadorA++;
-					}
-				}
-			} else if (elemento.tipo.equals("C")) {
-				if (elemento.via_Origen.numero == 1) {
-					if (elemento.via_Destino.numero == 2) {
-						contadorC++;
-					} else if (elemento.via_Destino.numero == 3) {
-						contadorC++;
-					}
-				} else if (elemento.via_Origen.numero == 3) {
-					if (elemento.via_Destino.numero == 1) {
-						contadorC++;
-					}
-				}
-			} else if (elemento.tipo.equals("M")) {
-				if (elemento.via_Origen.numero == 1) {
-					if (elemento.via_Destino.numero == 2) {
-						contadorM++;
-					} else if (elemento.via_Destino.numero == 3) {
-						contadorM++;
-					}
-				} else if (elemento.via_Origen.numero == 3) {
-					if (elemento.via_Destino.numero == 1) {
-						contadorM++;
-					}
-				}
-			}
-		}
-
-		return contadorGiros;
-	}*/
 
 	public int getTotalRegistros() {
 		return Main.registros.size();
