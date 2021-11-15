@@ -8,7 +8,7 @@ public class Error extends Exception{
 	private static final long serialVersionUID = 1L;
 	
 	public Error() {
-		super("No se pudo agregrar el vehiculo");
+		super("No se pudo completar la accion");
 	}
 
 }
