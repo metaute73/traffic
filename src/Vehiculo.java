@@ -29,7 +29,7 @@ public class Vehiculo {
 
 	public String toString() {
 		String r = String.valueOf(this.tipo) + String.valueOf(this.via_Origen.numero)
-				+ String.valueOf(this.via_Destino.numero);
+				+ String.valueOf(this.via_Destino.numero) + " registro numero: " + this.registro;
 		return r;
 	}
 
@@ -53,8 +53,8 @@ public class Vehiculo {
 			}
 
 		}
-		String vehiculosPorTipo = "Número de camiones: " + contadorC + "\nNúmero de automoviles: " + contadorA
-				+ "\nNúmero de motocicletas: " + contadorM;
+		String vehiculosPorTipo = "Numero de camiones: " + contadorC + "\nNumero de automoviles: " + contadorA
+				+ "\nNumero de motocicletas: " + contadorM;
 		return vehiculosPorTipo;
 	}
 
@@ -100,7 +100,7 @@ public class Vehiculo {
 		int girosA = girosPorTipo("A");
 		int girosC = girosPorTipo("C");
 		int girosM = girosPorTipo("M");
-		String totalGirosPorTipo = "Giros por camión: "+girosC+
+		String totalGirosPorTipo = "Giros por camion: "+girosC+
 				"\nGiros por automovil: "+girosA+
 				"\nGiros por motocicleta: "+girosM;
 		return totalGirosPorTipo;

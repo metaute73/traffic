@@ -17,9 +17,13 @@ public class Main {
 
 		new Vehiculo(via1, via2, "C", numero_registro());
 		new Vehiculo(via3, via1, "M", numero_registro());
+		new Vehiculo(via2, via2, "A", numero_registro());
+		new Vehiculo(via3, via3, "A", numero_registro());
+		new Vehiculo(via1, via3, "C", numero_registro());
+
 		Scanner input = new Scanner(System.in);
 		while (true) {
-			System.out.println("Bienvenido \n ¿Qué desea realizar hoy?");
+			System.out.println("Bienvenido \n ¿Que desea realizar hoy?");
 			System.out.println("1. Motrar registros\n2. Agregar vehiculo \n3. Buscar vehiculo \n4. Borrar vehiculo"
 					+ "\n5 Salir ");
 
@@ -33,6 +37,11 @@ public class Main {
 					int opcion = input.nextInt();
 					switch (opcion) {
 					case 1:
+						System.out.println();
+						for (Vehiculo v : registros) {
+							System.out.println(v.toString());
+						}
+						System.out.println();
 						continue;
 					case 2:
 						System.out.println("Total de Registros: " + Vehiculo.getTotalRegistros());
@@ -55,9 +64,9 @@ public class Main {
 				continue;
 
 			case 2:
-
+				
 				System.out.print("tipo: ");
-				String tipo = input.next();
+				String tipo = input.next().toUpperCase();
 				System.out.print("via origen: ");
 				int via_origen = input.nextInt();
 				System.out.print("via destino: ");
@@ -77,6 +86,7 @@ public class Main {
 				}
 				Vehiculo vehiculo = new Vehiculo(numero_via(via_origen), numero_via(via_destino), tipo,
 						numero_registro());
+				System.out.println("\nEl vehiculo fue agregado exitosamente\n");
 				continue;
 			case 3:
 				System.out.println("escribe numero de registro:");
@@ -89,6 +99,7 @@ public class Main {
 					continue;
 				}
 				System.out.println(registros.get(identificador).toString());
+			
 				continue;
 			case 4:
 				System.out.println("escribe numero de registro:");
@@ -106,7 +117,7 @@ public class Main {
 					registros.get(i).registro--;
 
 				}
-
+				System.out.println("\nel vehiculo fue borrado exitosamente\n");
 				continue;
 			case 5:
 				break;
@@ -114,10 +125,10 @@ public class Main {
 			break;
 
 		}
+		System.out.println("GRACIAS");
+		System.exit(0);
 		input.close();
-		for (Vehiculo v : registros) {
-			System.out.println(v.toString());
-		}
+		
 		
 	}
 
